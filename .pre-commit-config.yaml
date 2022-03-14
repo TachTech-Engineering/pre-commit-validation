@@ -1,0 +1,27 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 22.1.0
+    hooks:
+      - id: black
+        name: Black Formatting (Check Only)
+        args: [
+          ., --diff, --check
+        ]
+        verbose: true
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+      - id: trailing-whitespace
+        name: Trim Trailing Whitespace
+        verbose: true
+      - id: end-of-file-fixer
+        name: End With Newline
+        verbose: true
+  - repo: local
+    hooks:
+      - id: pytest
+        name: Running PyTest
+        entry: pytest
+        language: system
+        always_run: true
+        verbose: true
