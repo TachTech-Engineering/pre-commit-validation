@@ -22,6 +22,8 @@ repos:
       - id: pytest
         name: Running PyTest
         entry: pytest
+        args: [-v]
+        pass_filenames: false
         language: system
         always_run: true
         verbose: true
